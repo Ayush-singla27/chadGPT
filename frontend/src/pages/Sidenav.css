@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Open+Sans:wght@300&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+.sidenav {
+  display: block;
+  /* left: 0em; */
+  position: fixed;
+  top: 0em;
+  width: 11em;
+  z-index: 5;
+  height: 100%;
+  /* background: #ffe446; */
+  background: #ffe446;
+  /* background-repeat: no-repeat;
+  background-size:cover; */
+}
+.snCont2 {
+  display: flex;
+  flex-direction: column;
+  /* background: #c4c4d2; */
+  width: fit-content;
+  top: 5em;
+  left: 1em;
+  justify-content: space-between;
+}
+.snContent {
+  position: relative;
+  /* left: 1em; */
+  padding: 24px 3px;
+}
+.snCont1 p {
+  font-family: "Caveat", cursive;
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 5px;
+  color: #00000096;
+  top: 1em;
+  position: relative;
+  right: 16px;
+}
+.snCont2 a {
+  text-decoration: none;
+  margin: 10px 1px;
+  color: black;
+  cursor: pointer;
+  width: 7.5em;
+  font-size: 1.3em;
+  padding: 12px 1px;
+  display: flex;
+  transition: padding 0.5s;
+}
+.snCont1 {
+     background: #ffe446;
+    text-align: center;
+}
+.snCont2 a:hover {
+  background: #43443d;
+  color: #f8e801;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  padding-left: 7px;
+}
+.cross {
+  position: absolute;
+  top: 2em;
+  right: 0em;
+  display: none;
+  z-index: 2;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+.hamburg{
+    visibility: hidden;
+    margin-bottom: -24px;
+
+}
+@media only screen and (max-width: 600px) {
+  .sidenav {
+    width: 100%;
+    display: block;
+  }
+  .cross {
+    display: block;
+    top: 1.7em;
+    right: 1em;
+  }
+  .snCont2{
+    top: 2em;
+    margin-left: -19px;
+  }
+  .snCont2 a:hover {
+    /* background: white;
+    color: #000000a3; */
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    /* padding-left: 7px; */
+  }
+  .hamburg{
+    display: block;
+    position: absolute;
+    visibility:visible ;
+    top: 1.5em;
+    left: 1em;
+    font-size: 1.5em;
+    cursor: pointer;
+  }
+  #navcont{
+    visibility: hidden;
+    z-index: 2;
+  }
+}
