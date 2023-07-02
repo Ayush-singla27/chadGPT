@@ -8,21 +8,17 @@ from pydub import AudioSegment
 from flask_cors import CORS
 from flask import jsonify
 
-import configparser
+import os
+from dotenv import load_dotenv
+load_dotenv('.env')
+API_KEY = os.getenv('APIKEY')
 
-config = configparser.ConfigParser()
-config.read('config.ini')
-API_KEY = config.get('openai', 'APIKEY')
 
 
 app = Flask(__name__)
 CORS(app)
 
-# Replace the API_KEY and API_ENDPOINT with your own OpenAI credentials
-API_KEY = "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"
 API_ENDPOINT = "https://api.openai.com/v1/chat/completions"
-
-# Define the base URL for the frontend
 base_url = "http://localhost:5000"
 
 def generate_chat_completion(messages, model="gpt-3.5-turbo", temperature=1, max_tokens=None):
@@ -83,17 +79,6 @@ def submit_form():
 
     # Remove temporary audio file
     os.remove(audio_path)
-    arr = []
-    # arr.append(translated_audio_path)
-    # arr.append(translated_text)
-
-    # return send_file(arr , mimetype='audio/wav', as_attachment=True) 
-    # response_data = {
-    #     'audio': send_file(translated_audio_path, mimetype='audio/wav', as_attachment=True),
-    #     'translated_text': translated_text
-    # }
-
-    # return jsonify(response_data)
     return send_file(translated_audio_path, mimetype='audio/wav', as_attachment=True) 
 
 @app.route('/askqns', methods=['POST'])
