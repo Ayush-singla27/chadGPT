@@ -8,6 +8,13 @@ from pydub import AudioSegment
 from flask_cors import CORS
 from flask import jsonify
 
+import configparser
+
+config = configparser.ConfigParser()
+config.read('config.ini')
+API_KEY = config.get('openai', 'APIKEY')
+
+
 app = Flask(__name__)
 CORS(app)
 
