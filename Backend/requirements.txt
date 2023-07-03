@@ -4,4 +4,4 @@ gTTS==2.3.2
 pydub==0.25.1
 Requests==2.31.0
 SpeechRecognition==3.9.0
-dotenv==0.0.5
+python-dotenv==1.0.0
