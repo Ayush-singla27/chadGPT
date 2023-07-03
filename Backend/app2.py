@@ -7,6 +7,7 @@ import os
 from pydub import AudioSegment
 from flask_cors import CORS
 from flask import jsonify
+from waitress import serve
 
 import os
 from dotenv import load_dotenv
@@ -122,4 +123,5 @@ def askqns():
 
 
 if __name__ == '__main__':
-    app.run(host='localhost', port=5000) 
+    serve(app,host='0.0.0.0' , port=5000 , threads =2)
+    # app.run(host='localhost', port=5000) 
