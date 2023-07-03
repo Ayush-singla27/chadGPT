@@ -117,7 +117,7 @@ function CameraPage() {
     setAudioURL(url);
   };
   console.log(time);
-  const base_url = "http://localhost:5000";
+  const base_url = "https://backendchadgpt.onrender.com";
   const handleSubmit = async (event) => {
     // event.preventDefault(); // prevent the default form submission behavior
     const formData = new FormData(); // get the form data
